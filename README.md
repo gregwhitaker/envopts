@@ -1,9 +1,9 @@
 # envopts
 [![Build Status](https://travis-ci.org/gregwhitaker/envopts.svg?branch=master)](https://travis-ci.org/gregwhitaker/envopts)
 
-Parses an environment variable containing multiple system parameters and sets the parameters for use in a Java application.
+Parses an environment variable containing multiple system properties and sets the properties for use in a Java application.
 
-This is useful for when you want to supply a bunch of system parameters to a Docker container.
+This is useful for when you want to supply a bunch of system properties to a Docker container.
 
 ## Importing
 The library is available on JCenter and Maven Central:
@@ -21,7 +21,7 @@ The library is available on JCenter and Maven Central:
         implementation 'com.github.gregwhitaker:envopts:1.0.0'
 
 ## Usage
-Simply supply an environment variable named `ENV_OPTS` with a comma-delimited string of system parameters you would like
+Simply supply an environment variable named `ENV_OPTS` with a comma-delimited string of system properties you would like
 to set on the JVM:
 
     ENV_OPTS=-Dspring.profiles.active='local,dev',-Dlog4j.configurationFile=log4j2.xml
@@ -30,9 +30,9 @@ Then in your application startup add the following:
 
     EnvOpts.parse();
     
-Once the environment variable is parsed you will be able to access the system parameters like so:
+Once the environment variable is parsed you will be able to access the system properties like so:
 
-    System.getParameter("spring.profiles.active")
+    System.getProperty("spring.profiles.active")
 
 ## Building from Source
 Run the following command to build EnvOpts from source:
