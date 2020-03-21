@@ -1,11 +1,11 @@
 language: java
 sudo: false
 jdk:
-- oraclejdk8
+  - openjdk8
 install: true
 script: ci/buildtravis.sh
 before_cache:
-- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 cache:
   directories:
   - "$HOME/.gradle/caches/"
