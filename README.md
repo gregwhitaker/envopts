@@ -5,6 +5,21 @@ Parses an environment variable containing multiple system parameters and sets th
 
 This is useful for when you want to supply a bunch of system parameters to a Docker container.
 
+## Importing
+The library is available on JCenter and Maven Central:
+
+* Maven
+
+        <dependency>
+            <groupId>com.github.gregwhitaker</groupId>
+            <artifactId>envopts</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+* Gradle
+
+        implementation 'com.github.gregwhitaker:envopts:1.0.0'
+
 ## Usage
 Simply supply an environment variable named `ENV_OPTS` with a comma-delimited string of system parameters you would like
 to set on the JVM:
