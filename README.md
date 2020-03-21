@@ -1,4 +1,6 @@
 # envopts
+[![Build Status](https://travis-ci.org/gregwhitaker/envopts.svg?branch=master)](https://travis-ci.org/gregwhitaker/envopts)
+
 Parses an environment variable containing multiple system parameters and sets the parameters for use in a Java application.
 
 ## Bugs and Feedback
