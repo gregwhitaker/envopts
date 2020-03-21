@@ -6,7 +6,7 @@ Parses an environment variable containing multiple system properties and sets th
 This is useful for when you want to supply a bunch of system properties to a Docker container.
 
 ## Importing
-The library is available on JCenter and Maven Central:
+The library is available on [BinTray JCenter](https://bintray.com/gregwhitaker/maven/envopts):
 
 * Maven
 
