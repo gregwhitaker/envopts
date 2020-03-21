@@ -33,6 +33,11 @@ Then in your application startup add the following:
 Once the environment variable is parsed you will be able to access the system properties like so:
 
     System.getProperty("spring.profiles.active")
+    
+## Examples
+Please see the example projects below for demonstrations on how to use envopts in different environments:
+
+* [Spring Boot](https://github.com/gregwhitaker/envopts-springboot-example) - Example of using envopts in a Spring Boot application.
 
 ## Building from Source
 Run the following command to build EnvOpts from source:
