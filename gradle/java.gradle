@@ -36,6 +36,7 @@ publishing {
                 name = project.name
                 description = 'Utility for parsing environment variable into system parameters.'
                 url = 'https://github.com/gregwhitaker/envopts'
+                version = project.version
 
                 licenses {
                     license {
