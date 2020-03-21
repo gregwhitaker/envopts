@@ -3,6 +3,27 @@
 
 Parses an environment variable containing multiple system parameters and sets the parameters for use in a Java application.
 
+This is useful for when you want to supply a bunch of system parameters to a Docker container.
+
+## Usage
+Simply supply an environment variable named `ENV_OPTS` with a comma-delimited string of system parameters you would like
+to set on the JVM:
+
+    ENV_OPTS=-Dspring.profiles.active='local,dev',-Dlog4j.configurationFile=log4j2.xml
+    
+Then in your application startup add the following:
+
+    EnvOpts.parse();
+    
+Once the environment variable is parsed you will be able to access the system parameters like so:
+
+    System.getParameter("spring.profiles.active")
+
+## Building from Source
+Run the following command to build EnvOpts from source:
+
+    ./gradlew clean build
+
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/envopts/issues).
 
