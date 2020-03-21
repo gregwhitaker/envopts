@@ -4,14 +4,14 @@ plugins {
     id "com.jfrog.bintray"          version "1.8.4"
 }
 
-apply from: "${rootProject.projectDir}/gradle/java.gradle"
-apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
-
 group = 'com.github.gregwhitaker'
 version = '1.0.0'
 
 // Adds a version qualifier to the end of the version (i.e. SNAPSHOT, RC)
 project.version += project.hasProperty('versionQualifier') ? '-' + project.property('versionQualifier') : ''
+
+apply from: "${rootProject.projectDir}/gradle/java.gradle"
+apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
 
 repositories {
     jcenter()

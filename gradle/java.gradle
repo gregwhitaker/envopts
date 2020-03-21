@@ -24,6 +24,10 @@ artifacts {
     archives javadocJar
 }
 
+jar {
+    archiveVersion = "${project.version}"
+}
+
 // Artifacts to Publish
 publishing {
     publications {
