@@ -9,7 +9,6 @@ apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
 
 group = 'com.github.gregwhitaker'
 version = '1.0.0'
-sourceCompatibility = 1.8
 
 // Adds a version qualifier to the end of the version (i.e. SNAPSHOT, RC)
 project.version += project.hasProperty('versionQualifier') ? '-' + project.property('versionQualifier') : ''
