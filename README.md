@@ -37,7 +37,7 @@ Once the environment variable is parsed you will be able to access the system pr
 ## Examples
 Please see the example projects below for demonstrations on how to use envopts in different environments:
 
-* [Spring Boot](https://github.com/gregwhitaker/envopts-springboot-example) - Example of using envopts in a Spring Boot application.
+* [Docker](https://github.com/gregwhitaker/envopts-springboot-example) - Example of using envopts in a Spring Boot application packaged as a Docker container.
 
 ## Building from Source
 Run the following command to build EnvOpts from source:
