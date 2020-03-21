@@ -1,0 +1,43 @@
+apply plugin: "com.jfrog.bintray"
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayKey') ? project.property('bintrayKey') : System.getenv('BINTRAY_KEY')
+    publications = ['mavenJava']
+
+    dryRun = false      // true if you want to run the publish without publishing artifacts
+    publish = true      // false if you only want to stage the artifacts and then publish manually in bintray
+    override = false    // true if you want to override existing versions in bintray
+
+    pkg {
+        repo = 'maven'
+        name = project.name
+        userOrg = 'gregwhitaker'
+        desc = 'Utility for parsing environment variable into system parameters.'
+
+        websiteUrl = 'https://github.com/gregwhitaker/envopts'
+        issueTrackerUrl = 'https://github.com/gregwhitaker/envopts/issues'
+        vcsUrl = 'https://github.com/gregwhitaker/envopts.git'
+
+        licenses = ['MIT']
+
+        githubRepo = 'gregwhitaker/envopts'
+
+        version {
+            name = project.version
+            released = new Date()
+            vcsTag = project.version
+
+            gpg {
+                sign = true
+            }
+
+            mavenCentralSync {
+                sync = true
+                user = project.hasProperty('sonatypeUser') ? project.property('sonatypeUser') : System.getenv('SONATYPE_USER')
+                password = project.hasProperty('sonatypePassword') ? project.property('sonatypePassword') : System.getenv('SONATYPE_PASSWORD')
+                close = '1' //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by putting 0 as value) and release the version manually.
+            }
+        }
+    }
+}

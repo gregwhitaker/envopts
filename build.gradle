@@ -1,0 +1,28 @@
+plugins {
+    id "java-library"
+    id "com.adarshr.test-logger"    version "2.0.0"
+    id "com.jfrog.bintray"          version "1.8.4"
+}
+
+apply from: "${rootProject.projectDir}/gradle/java.gradle"
+apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
+
+group = 'com.github.gregwhitaker'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+// Adds a version qualifier to the end of the version (i.e. SNAPSHOT, RC)
+project.version += project.hasProperty('versionQualifier') ? '-' + project.property('versionQualifier') : ''
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:28.2-jre'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'com.github.stefanbirkner:system-rules:1.19.0'
+}

@@ -1,0 +1,46 @@
+apply plugin: "java-library"
+apply plugin: "maven-publish"
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+// Artifacts to Publish
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+
+            pom {
+                name = project.name
+                description = 'Utility for parsing environment variable into system parameters.'
+                url = 'https://github.com/gregwhitaker/envopts'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'gregwhitaker'
+                        name = 'Greg Whitaker'
+                        email = 'gregory.a.whitaker@gmail.com'
+                        url = 'https://github.com/gregwhitaker'
+                    }
+                }
+
+                scm {
+                    url = 'https://github.com/gregwhitaker/envopts'
+                    connection = 'scm:git:git://github.com/gregwhitaker/envopts.git'
+                    developerConnection = 'scm:git:git@github.com:gregwhitaker/envopts.git'
+                }
+            }
+        }
+    }
+}
