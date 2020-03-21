@@ -9,7 +9,6 @@ def sourcesJarMap = [name: 'sourcesJar', type: Jar, dependsOn: classes]
 project.tasks.create(sourcesJarMap, {
     classifier = 'sources'
     from sourceSets.main.allSource
-    version = "${project.version}"
 })
 
 // Build Javadoc Jars
@@ -17,7 +16,6 @@ def javadocJarMap = [name: 'javadocJar', type: Jar, dependsOn: javadoc]
 project.tasks.create(javadocJarMap, {
     classifier = 'javadoc'
     from javadoc.destinationDir
-    version = "${project.version}"
 })
 
 // Build Artifacts
