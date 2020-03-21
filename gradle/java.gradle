@@ -6,6 +6,12 @@ java {
     withSourcesJar()
 }
 
+// Build Artifacts
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
 // Artifacts to Publish
 publishing {
     publications {
